@@ -1,0 +1,11 @@
+.progButton {
+  --slds-c-button-text-color: #181818;
+  --slds-c-button-text-color-active: #181818;
+  --slds-c-button-text-color-hover: #181818;
+  font-size: 16px;
+}
+
+.editButton{
+  --slds-c-icon-color-foreground: #e9e3e3;
+  --slds-c-button-text-color-hover: #858282;
+}

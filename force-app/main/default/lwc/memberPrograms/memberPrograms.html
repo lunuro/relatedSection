@@ -1,0 +1,61 @@
+<template>
+    <div class="section-layout-container slds-section slds-is-open progSection">
+        <h3 class="slds-section__title slds-truncate slds-p-around_xx-small slds-theme_shade">
+            <lightning-button icon-name={iconToggle} alternative-text="Show Programs" label="Programs"
+                onclick={toggleSection} variant="base"
+                class="slds-button slds-button_full-width slds-section__title-action progButton">
+            </lightning-button>
+        </h3>
+        <div aria-hidden="false" class="slds-section__content">
+            <div class="slds-grid slds-gutters slds-wrap slds-p-left_small slds-p-right_small">
+                <template for:each={records} for:item="rec">
+                    <div class="slds-col slds-size_6-of-12" key={rec.id}>
+                        <lightning-record-edit-form object-api-name={objectApiName} record-id={rec.id}>
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_6-of-12 slds-p-bottom_xx-small slds-border_bottom">
+                                    <lightning-output-field field-name={progFields.NAME_FIELD} variant="label-hidden"
+                                        field-class="slds-text-body_small">
+                                    </lightning-output-field>
+                                </div>
+                                <template if:true={editMode}>
+                                    <div class="slds-col slds-size_6-of-12 slds-p-bottom_xx-small">
+                                        <lightning-input-field field-name={progFields.STATUS_FIELD} class={rec.id}
+                                            variant="label-hidden" value={statusValue}>
+                                        </lightning-input-field>
+                                    </div>
+                                </template>
+                                <template if:false={editMode}>
+                                    <div class="slds-col slds-size_5-of-12 slds-p-bottom_xx-small slds-border_bottom">
+                                        <lightning-output-field field-name={progFields.STATUS_FIELD}
+                                            variant="label-hidden">
+                                        </lightning-output-field>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-12 slds-p-bottom_xx-small slds-border_bottom">
+                                        <lightning-button-icon icon-name="utility:edit" onclick={handleEdit}
+                                            class="editButton" variant="container" size="small"
+                                            alternative-text="edit">
+                                        </lightning-button-icon>
+                                    </div>
+                                </template>
+                            </div>
+                        </lightning-record-edit-form>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <template if:true={editMode}>
+            <div class="slds-modal__footer slds-m-top_x-small">
+                <div class="slds-grid slds-gutters_xx-small">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-button type="button" label="Cancel" variant="neutral" onclick={handleCancel}>
+                        </lightning-button>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-button type="submit" label="Save" variant="brand" onclick={handleSave}
+                            class="slds-float_left"></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>
