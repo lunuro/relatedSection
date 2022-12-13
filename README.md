@@ -1,18 +1,37 @@
-# Salesforce DX Project: Next Steps
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+# Salesforce Related Section
 
-## How Do You Plan to Deploy Your Changes?
+Salesforce LWC to show custom object records related to Contacts in a layout section.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Features
 
-## Configure Your Salesforce DX Project
+- Show custom object records as fields in a dynamic form section
+- Edit the records directly from the section
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+## Tech Stack
 
-## Read All About It
+**Client:** Lightning Web Components
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+**Server:** JavaScript
+
+## Tech Features
+
+- LWC Toast notifications in case of error
+- Records obtained via lightning/uiRelatedListApi
+- Mass update records using lightning/uiRecordApi
+- SLDS usage including SLDS styling hooks.
+
+## Authors
+
+- [@Luis Núñez Rodríguez](https://www.linkedin.com/in/luisnunezrodriguez)
+
+## Feedback
+
+If you have any feedback or doubts, please reach me on:
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/luisnunezrodriguez/)
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
